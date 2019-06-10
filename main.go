@@ -40,16 +40,12 @@ func main() {
 
 func resp() Data {
 	i := rand.Intn(13)
-	resp := Data{
-		Base: Base{
-			StatusCode: http.StatusInternalServerError,
-			Message:    "Internal Server Error",
-		},
-	}
+	resp := Data{}
+
 	switch i {
 	case 0:
-		resp.Name = "Life"
-		resp.Code = "hjg2134kj2b34hkb"
+		resp.Name = "RandomName"
+		resp.Code = "supersecretawesomecode"
 		resp.StatusCode = http.StatusOK
 		resp.Message = "Success"
 	case 1:
@@ -70,6 +66,9 @@ func resp() Data {
 	case 6:
 		resp.StatusCode = http.StatusGatewayTimeout
 		resp.Message = "Gateway Timeout"
+	default:
+		resp.StatusCode = http.StatusInternalServerError
+		resp.Message = "Internal Server Error"
 	}
 
 	return resp
