@@ -1,0 +1,16 @@
+name: gcloud
+on: [push]
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions-hub/gcloud@master
+        env:
+          PROJECT_ID: ${{secrets.GCP_PROJECT}}
+          APPLICATION_CREDENTIALS: ${{secrets.GCP_CREDS}}
+        with:
+          args: app deploy app.yaml
