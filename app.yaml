@@ -1,3 +1,4 @@
 runtime: go112
 env: standard
+#service: merr
 instance_class: F1
