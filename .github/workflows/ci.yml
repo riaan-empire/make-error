@@ -13,4 +13,4 @@ jobs:
           PROJECT_ID: ${{secrets.GCP_PROJECT}}
           APPLICATION_CREDENTIALS: ${{secrets.GCP_CREDS}}
         with:
-          args: app deploy app.yaml
+          args: app deploy app.yaml --quiet
