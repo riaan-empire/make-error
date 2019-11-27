@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions-hub/gcloud@master
         env:
-          PROJECT_ID: ${{secrets.GCP_PROJECT}}
+          PROJECT_ID: riaan-poc
           APPLICATION_CREDENTIALS: ${{secrets.GCP_CREDS}}
         with:
-          args: app deploy app.yaml --quiet --project riaan-poc
+          args: app deploy app.yaml --quiet
