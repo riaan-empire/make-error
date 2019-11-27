@@ -13,4 +13,4 @@ jobs:
           PROJECT_ID: ${{secrets.GCP_PROJECT}}
           APPLICATION_CREDENTIALS: ${{secrets.GCP_CREDS}}
         with:
-          args: config list #app deploy app.yaml --quiet
+          args: app deploy app.yaml --quiet -v $(git rev-parse --verify HEAD)
